@@ -1,0 +1,15 @@
+{
+ var studentList=from s in _contaxt.Student
+ join in c _context.Course
+ on s.CourseId equals c.CourseId
+ where Name !=null ? s.Name.Cointain(Name) : ture &&
+ MinAge !=null ? s.Age> MinAge: ture &&
+ select new StudentCourse
+ {
+	StudentId=s.StudentId,
+	StudentName=s.Name,
+	Age=s.Age,
+	Gender=s.Gender,
+	CourseId=s.CourseId,
+	CourseName=c.CourseName
+ };
